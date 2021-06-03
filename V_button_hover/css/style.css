@@ -1,0 +1,84 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.btn__circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #282936;
+  border-radius: 50px;
+  transition: 0.45s;
+}
+
+.btn:hover .btn__circle {
+  width: 100%;
+}
+
+.btn__icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  font-size: 30px;
+  color: #fff;
+  transform: translateY(-50%);
+  transition: 0.45s;
+}
+
+.btn:hover .btn__icon {
+  left: 24px;
+}
+
+.btn__icon::before {
+  position: absolute;
+  content: "";
+  top: 11px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.45s;
+}
+
+.btn:hover .btn__icon::before {
+  width: 13px;
+}
+
+.btn__text {
+  position: absolute;
+  left: 60px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #282936;
+  transition: 0.45s;
+}
+
+.btn:hover .btn__text {
+  color: #fff;
+}
