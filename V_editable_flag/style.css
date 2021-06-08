@@ -1,0 +1,58 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  background-color: #f4f4f4;
+}
+
+.flag {
+  position: relative;
+  background-color: #1aa3ff;
+  color: #f4f4f4;
+  padding: 0.7em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transform-style: preserve-3d;
+  transform: rotate(-15deg) skew(-15deg, 9deg);
+}
+
+.flag::before,
+.flag::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2.5em;
+  border-style: solid;
+  border-width: 0.5em;
+  background-color: #0099ff;
+  z-index: -1;
+  transform: translateZ(-1em);
+}
+
+.flag::before {
+  left: -0.5em;
+  top: 0.5em;
+  border-color: #0099ff #006bb3 #0099ff #0099ff;
+}
+
+.flag::after {
+  right: -0.5em;
+  top: -0.5em;
+  border-color: #0099ff #0099ff #0099ff #006bb3;
+}
