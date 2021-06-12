@@ -1,0 +1,139 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: #f4f4f4;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s ease-in-out;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #f4f4f4;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list {
+  position: relative;
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background-color: #000;
+}
+
+.nav__item {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.nav__link {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+
+.nav__link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  border-radius: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.nav__link.orange::before {
+  background-color: #ac7339;
+}
+.nav__link.blue::before {
+  background-color: #1a53ff;
+}
+.nav__link.green::before {
+  background-color: #009933;
+}
+.nav__link.red::before {
+  background-color: #ff0000;
+}
+.nav__link.purple::before {
+  background-color: #cc33ff;
+}
+
+.nav__link.active {
+  width: 130%;
+  height: 130%;
+  font-size: 30px;
+  transition: 0.3s ease-in-out;
+}
+
+.nav__link.active::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.nav__link:not(.active):hover {
+  font-size: 25px;
+}
+
+.upper {
+  position: absolute;
+  left: 0;
+  top: -30px;
+  content: "";
+  background-color: #000;
+  width: 150px;
+  height: 30px;
+  z-index: -2;
+  clip-path: url(#menu);
+  transition: 0.3s ease-in-out;
+}
+
+.svg {
+  width: 0;
+  height: 0;
+}
