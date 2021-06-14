@@ -1,0 +1,110 @@
+:root {
+  --base-sizing: 22px;
+  --color-bg: #00141a;
+  --color_dot: #f4f4f4;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+button {
+  position: relative;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.pagination {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.pagination__button {
+  width: var(--base-sizing);
+  height: var(--base-sizing);
+  cursor: pointer;
+}
+
+.pagination__button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 2px solid var(--color_dot);
+  border-radius: 50%;
+  transform: scale(1);
+  opacity: 0.6;
+  transition: transform 0.12s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.4s cubic-bezier(0.25, 0.5, 0, 1);
+}
+
+.pagination__button:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.pagination__button.active::before {
+  transform: scale(0);
+  transition: transform 0.15s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.pagination__current {
+  z-index: -1;
+  position: absolute;
+  width: var(--base-sizing);
+  height: var(--base-sizing);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0, 0, 0.5, 1);
+}
+
+.pagination__current::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color_dot);
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 0.225s 0.12s cubic-bezier(0, 1.95, 0.75, 1);
+}
+
+.pagination__button:active ~ .pagination__current::before {
+  transform: scale(1.5, 0.8);
+  transition: transform 0.1s cubic-bezier(0, 0, 0.5, 1);
+}
+
+.pagination__button:nth-of-type(1).active ~ .pagination__current {
+  transform: translateX(0);
+}
+.pagination__button:nth-of-type(2).active ~ .pagination__current {
+  transform: translateX(calc(100% + 50px));
+}
+.pagination__button:nth-of-type(3).active ~ .pagination__current {
+  transform: translateX(calc(200% + 50px * 2));
+}
+.pagination__button:nth-of-type(4).active ~ .pagination__current {
+  transform: translateX(calc(300% + 50px * 3));
+}
