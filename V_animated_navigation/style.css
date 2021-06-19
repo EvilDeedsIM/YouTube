@@ -1,0 +1,144 @@
+:root {
+  --base-sizing: 50px;
+  --color-dark: #00141a;
+  --color-light: #f4f4f4;
+  --gap: 15px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-dark);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.nav {
+  position: relative;
+}
+
+.nav__list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.nav__link {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.nav__link::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav__item.active .nav__link {
+  color: var(--color-dark);
+}
+
+.nav__item {
+  position: relative;
+  width: var(--base-sizing);
+  height: var(--base-sizing);
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--color-light);
+  transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1), font-size 0.25s ease-in;
+}
+
+.nav__item:not(.active):hover {
+  transform: scale(1.2);
+}
+
+.nav__item:not(.active):active {
+  transform: scale(1);
+}
+
+.nav__item.active {
+  font-size: 24px;
+  transition: font-size 0.25s ease-in;
+}
+
+.nav__item.active::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale(1);
+  opacity: 0.6;
+  transition: transform 0.12s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.4s cubic-bezier(0.25, 0.5, 0, 1);
+}
+
+.nav__current {
+  z-index: -1;
+  position: absolute;
+  width: var(--base-sizing);
+  height: var(--base-sizing);
+  cursor: pointer;
+  transform: translateX(0);
+  transition: all 0.25s cubic-bezier(0, 0, 0.5, 1);
+}
+
+.nav__current::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: lightsteelblue;
+  border-radius: 5px;
+  transform: scale(1);
+  transition: transform 0.225s 0.12s cubic-bezier(0, 1.95, 0.75, 1), border-radius 0.3s ease-in;
+}
+
+.nav__item:active ~ .nav__current::before {
+  transform: scale(1.2, 0.7);
+  border-radius: 50%;
+  transition: transform 0.1s cubic-bezier(0, 0, 0.5, 1);
+}
+
+.nav__item:nth-of-type(1).active ~ .nav__current {
+  transform: translateX(0);
+}
+.nav__item:nth-of-type(2).active ~ .nav__current {
+  transform: translateX(calc(100% + var(--gap)));
+}
+.nav__item:nth-of-type(3).active ~ .nav__current {
+  transform: translateX(calc((100% + var(--gap)) * 2));
+}
+.nav__item:nth-of-type(4).active ~ .nav__current {
+  transform: translateX(calc((100% + var(--gap)) * 3));
+}
+.nav__item:nth-of-type(5).active ~ .nav__current {
+  transform: translateX(calc((100% + var(--gap)) * 4));
+}
