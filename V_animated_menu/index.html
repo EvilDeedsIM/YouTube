@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <menu class="menu">
+      <div class="menu__top">
+        <ul class="menu__top-list">
+          <li class="menu__top-item item">
+            <span class="item__circle red"></span>
+          </li>
+          <li class="menu__top-item item">
+            <span class="item__circle yellow"></span>
+          </li>
+          <li class="menu__top-item item">
+            <span class="item__circle green"></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu__ui ui">
+        <span class="ui__icon">
+          <span class="ui__icon-count">8</span>
+        </span>
+        <button class="ui__btn active" active></button>
+      </div>
+
+      <div class="menu__search search">
+        <span class="search__icon"></span>
+        <input type="text" class="search__input" placeholder="Search" />
+        <span class="search__right">/f</span>
+      </div>
+
+      <nav class="menu__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item" data-text="Dashboard">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon dashboard"></span>
+              <p class="link__text">Dashboard</p>
+            </a>
+          </li>
+          <li class="nav__item" data-text="Products">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon products"></span>
+              <p class="link__text">Products</p>
+            </a>
+          </li>
+          <li class="nav__item" data-text="Companies">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon companies"></span>
+              <p class="link__text">Companies</p>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav__list">
+          <li class="nav__item" data-text="Sales">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon sales"></span>
+              <p class="link__text">Sales</p>
+            </a>
+          </li>
+          <li class="nav__item" data-text="Discount">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon discount"></span>
+              <p class="link__text">Discount</p>
+            </a>
+          </li>
+          <li class="nav__item" data-text="Payouts">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon payouts"></span>
+              <p class="link__text">Payouts</p>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav__list">
+          <li class="nav__item" data-text="Chat">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon chat"></span>
+              <p class="link__text">Chat</p>
+              <span class="chat__alert"></span>
+            </a>
+          </li>
+          <li class="nav__item" data-text="Settings">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon settings"></span>
+              <p class="link__text">Settings</p>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav__list">
+          <li class="nav__item" data-text="New&nbsp;Product">
+            <a href="#" class="nav__item-link link">
+              <span class="link__icon new-product"></span>
+              <p class="link__text">New&nbsp;Product</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="menu__footer">
+        <span class="logo"></span>
+        <div class="info">
+          <h1 class="info__title">Evil Deeeds</h1>
+          <h2 class="info__subtitle">Lead Visual Designer</h2>
+        </div>
+        <button class="up-down-btn"></button>
+      </div>
+    </menu>
+
+    <script src="app.js"></script>
+  </body>
+</html>
