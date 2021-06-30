@@ -2,22 +2,14 @@ const menu = document.querySelector(".menu");
 const openBtn = document.querySelector(".ui__btn");
 
 openBtn.addEventListener("click", () => {
-  menuScale();
-  buttonRotate();
+  changeActiveState(menu);
+  changeActiveState(openBtn);
 });
 
-function menuScale() {
-  if (menu.classList.contains("active")) {
-    menu.classList.remove("active");
+function changeActiveState(obj) {
+  if (obj.classList.contains("active")) {
+    obj.classList.remove("active");
   } else {
-    menu.classList.add("active");
-  }
-}
-
-function buttonRotate() {
-  if (openBtn.classList.contains("active")) {
-    openBtn.classList.remove("active");
-  } else {
-    openBtn.classList.add("active");
+    obj.classList.add("active");
   }
 }
