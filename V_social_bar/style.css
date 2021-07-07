@@ -1,11 +1,11 @@
 :root {
-  font-size: 30px;
-
   --facebook: #3b5999;
   --twitter: #46c1f6;
   --instagram: #e1306c;
   --github: #333;
   --youtube: #de463b;
+
+  font-size: 30px;
 }
 
 html {
