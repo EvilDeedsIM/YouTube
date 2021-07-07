@@ -1,0 +1,123 @@
+:root {
+  font-size: 30px;
+
+  --facebook: #3b5999;
+  --twitter: #46c1f6;
+  --instagram: #e1306c;
+  --github: #333;
+  --youtube: #de463b;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+a {
+  color: #111;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.name {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  background-color: var(--facebook);
+  color: #fff;
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateX(-50%);
+}
+
+.name::before {
+  content: "";
+  position: absolute;
+  bottom: -0.15rem;
+  left: 50%;
+  width: 0.3rem;
+  height: 0.3rem;
+  background-color: inherit;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon:hover .name {
+  top: -2rem;
+  opacity: 1;
+}
+
+.icon:hover .img {
+  color: #fff;
+}
+
+.facebook:hover .name,
+.facebook:hover .name::before,
+.facebook:hover .img {
+  background-color: var(--facebook);
+}
+
+.twitter:hover .name,
+.twitter:hover .name::before,
+.twitter:hover .img {
+  background-color: var(--twitter);
+}
+
+.instagram:hover .name,
+.instagram:hover .name::before,
+.instagram:hover .img {
+  background-color: var(--instagram);
+}
+
+.github:hover .name,
+.github:hover .name::before,
+.github:hover .img {
+  background-color: var(--github);
+}
+
+.youtube:hover .name,
+.youtube:hover .name::before,
+.youtube:hover .img {
+  background-color: var(--youtube);
+}
