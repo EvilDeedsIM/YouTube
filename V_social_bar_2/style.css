@@ -1,0 +1,78 @@
+:root {
+  --facebook: #3b5999;
+  --twitter: #46c1f6;
+  --instagram: #e1306c;
+  --github: #333;
+  --youtube: #de463b;
+
+  font-size: 30px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon {
+  transition: 0.15s ease-out;
+}
+
+.img {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: #999;
+}
+
+.container:hover > .icon {
+  filter: blur(2px);
+  transform: scale(0.95);
+}
+
+.container:hover .icon:hover {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.facebook .img {
+  background-color: var(--facebook);
+}
+.twitter .img {
+  background-color: var(--twitter);
+}
+.instagram .img {
+  background-color: var(--instagram);
+}
+.github .img {
+  background-color: var(--github);
+}
+.youtube .img {
+  background-color: var(--youtube);
+}
