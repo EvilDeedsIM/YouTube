@@ -3,6 +3,8 @@
 :root {
   --greyLight-1: #f3f3f3;
   --greyDark-1: #111;
+
+  font-size: 16px;
 }
 
 html {
@@ -23,7 +25,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: var(--greyLight-1);
   color: var(--greyDark-1);
   font-size: 16px;
@@ -31,8 +32,6 @@ body {
 }
 
 h1 {
-  position: absolute;
-  top: 0;
   width: 100%;
   font-weight: 700;
   text-align: center;
@@ -58,7 +57,31 @@ a {
   margin-bottom: 1rem;
 }
 
+.projects__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.project__video {
+  margin-bottom: 0.5rem;
+}
+
+.project__links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .project__link {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
   opacity: 1;
   transition: 0.2s ease-in-out;
 }
