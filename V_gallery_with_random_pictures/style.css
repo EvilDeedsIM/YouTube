@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,700");
+
+:root {
+  font-size: 20px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(150deg, #111, #333);
+  transition: 0.15s ease-out;
+}
+
+body.vertical {
+  flex-direction: column;
+  transition: 0.15s ease-out;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  justify-content: center;
+  width: 90vmin;
+  height: 90vmin;
+}
+
+body.vertical .container {
+  margin-bottom: 1rem;
+  transition: 0.15s ease-out;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #000;
+  box-shadow: 0 0 10px #111;
+}
+
+.item.active {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  grid-row: unset;
+  grid-column: unset;
+}
+
+.item.active .item__img {
+  opacity: 1;
+}
+
+.item__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.2s ease-out;
+  transform: translate(-50%, -50%);
+}
+
+.item__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  transition: 0.3s ease-out;
+}
+
+.item:hover .item__img {
+  opacity: 1;
+}
+
+.item:hover .item__title {
+  text-shadow: 0 2px 5px #000;
+  opacity: 1;
+}
+
+.item.active .item__title {
+  display: none;
+}
+
+.item1 {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+}
+.item2 {
+  grid-row: 1 / span 3;
+  grid-column: 3 / span 3;
+}
+.item3 {
+  grid-row: 3 / span 2;
+  grid-column: 1 / span 2;
+}
+.item4 {
+  grid-row: 4 / span 1;
+  grid-column: 3 / span 1;
+}
+.item5 {
+  grid-row: 5 / span 2;
+  grid-column: 1 / span 3;
+}
+.item6 {
+  grid-row: 4 / span 3;
+  grid-column: 4 / span 2;
+}
+
+.shuffle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 172px;
+  height: 50px;
+  margin-left: 20px;
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.1s ease-out, font-size 0.05s ease-out;
+}
+
+.shuffle-btn:hover {
+  background-color: #777;
+}
+
+.shuffle-btn:active {
+  font-size: 0.75rem;
+}
