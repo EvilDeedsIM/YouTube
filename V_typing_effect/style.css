@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,500");
+
+:root {
+  --primaryColor: #00131a;
+  --textColorLight: #f2f2f2;
+  --textColorOrange: #c60;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--textColorLight);
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  background-color: var(--primaryColor);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  font-size: 0;
+}
+
+.main {
+  white-space: nowrap;
+}
+
+.back {
+  position: absolute;
+  right: -0.5rem;
+  bottom: 0;
+  height: 5rem;
+  white-space: nowrap;
+}
+
+.main-text {
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+}
+
+.typed-text {
+  position: relative;
+  display: inline-flex;
+  color: var(--textColorOrange);
+  font-weight: 400;
+  font-size: 2rem;
+  white-space: nowrap;
+}
+
+.back .main-text {
+  font-size: 3.4rem;
+  text-shadow: 0 0 10px var(--textColorLight);
+  opacity: 0.05;
+}
+
+.back .typed-text {
+  font-size: 3.4rem;
+  text-shadow: 0 0 10px var(--textColorOrange);
+  opacity: 0.1;
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  right: -6px;
+  width: 4px;
+  height: 2.5rem;
+  background-color: var(--textColorLight);
+  font-size: 3rem;
+  animation: blink 1s infinite;
+}
+
+.cursor.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--textColorLight);
+  }
+  49% {
+    background-color: var(--textColorLight);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--textColorLight);
+  }
+}
